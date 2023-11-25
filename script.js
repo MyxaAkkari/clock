@@ -3,6 +3,12 @@ let hours = 0
 let minutes = 0
 let seconds = 0
 
+// creating a function to return random colors
+function getRandomColor() {
+    // Generate a random hex color
+    return '#' + Math.floor(Math.random() * 16777215).toString(16);
+  }
+  
 // creating the func that updates the clock
 function updateClock() {
     // getting the div element for the clock from the html and storing it in a variable
@@ -27,12 +33,17 @@ function updateClock() {
     }
 
     // formating the clock to have two digits and adding zero at the start if h,m,s are one digit number
-    const formatedHours = hours.toString().padStart(2,"0")
-    const formatedMinutes = minutes.toString().padStart(2,"0")
-    const formatedSeconds = seconds.toString().padStart(2,"0")
+    const formattedHours = hours.toString().padStart(2,"0")
+    const formattedMinutes = minutes.toString().padStart(2,"0")
+    const formattedSeconds = seconds.toString().padStart(2,"0")
 
-    // showing the time on html
-    clockElement.textContent = `${formatedHours}:${formatedMinutes}:${formatedSeconds}`
+    // generate randome color for each digit
+    const colorHours = getRandomColor()
+    const colorMinutes = getRandomColor()
+    const colorSeconds = getRandomColor()
+
+    // showing the time and color on html
+    clockElement.innerHTML = `<span style="color: ${colorHours}">${formattedHours}</span>:<span style="color: ${colorMinutes}">${formattedMinutes}</span>:<span style="color: ${colorSeconds}">${formattedSeconds}</span>`;
 
 }
 
