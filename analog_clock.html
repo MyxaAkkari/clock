@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clock</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="analog.css">
 </head>
 
 <body>
@@ -14,9 +14,13 @@
         <button onclick="window.location.href='real_clock.html'">Real Time Clock</button>
         <button onclick="window.location.href='analog_clock.html'">Analog Clock</button>
     </div>
-
-    <div class="clock" id="clock"></div>
-    <script src="script.js"></script>
+    <div id="clockContainer">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+    </div>
+    
+      <script src="analogscript.js"></script>
 </body>
 
 </html>
